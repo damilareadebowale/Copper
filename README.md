@@ -138,3 +138,7 @@ BENCH = {
     "Q14061": {"name": "COX17", "pairs": [(23, 24), (26, 55), (36, 45)]},
     "Q49B96": {"name": "COX19", "pairs": []},
 }
+
+Installation
+Python dependencies
+pip install numpy pandas scipy biopython
