@@ -142,3 +142,55 @@ BENCH = {
 Installation
 Python dependencies
 pip install numpy pandas scipy biopython
+External tools
+
+Install:
+
+msms
+pdb_to_xyzr
+
+Make sure both are on your PATH:
+
+which msms
+which pdb_to_xyzr
+Quick start
+Step 1–3
+python3 screen_step1_3.py \
+  --pdb_dir /path/to/alphafold_human_proteome \
+  --out_dir out_step1_3 \
+  --workers 4
+Step 4
+python3 step4_depth_msms_mp.py \
+  --pdb_dir /path/to/alphafold_human_proteome \
+  --pairs_csv out_step1_3/step3_pairs_check.csv \
+  --out_dir out_step4 \
+  --workers 4
+Outputs
+out_step1_3/
+├── step2_counts.csv
+├── step3_counts.csv
+└── step3_pairs_check.csv
+
+out_step4/
+├── step4_depths.csv
+├── step4_depths_FIXED_dedup.csv
+└── step4_best_pair_per_file_13264.csv
+Repository layout
+.
+├── README.md
+├── screen_step1_3.py
+├── step4_depth_msms_mp.py
+├── out_step1_3/
+├── out_step4/
+└── scripts/
+Notes
+Each AlphaFold filename is treated as a separate structural model during calculation.
+Multiple fragments can map to the same UniProt accession.
+Results can be collapsed downstream to:
+best pair per file
+best pair per UniProt
+best model per UniProt
+Rare MSMS failures can be rerun and patched back into the Step 4 table.
+Citation
+
+If you use this workflow, please cite the AlphaFold database and MSMS in addition to this repository.
