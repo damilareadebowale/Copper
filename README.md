@@ -1,4 +1,4 @@
-# Human Copper Chaperone Screen from AlphaFold Structures
+# Structure-Based Screening of the AlphaFold Human Proteome for Candidate Copper-Binding Proteins
 
 A structure-based workflow for identifying candidate human copper chaperones from the AlphaFold human proteome using cysteine geometry and surface accessibility.
 
