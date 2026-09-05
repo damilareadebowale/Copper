@@ -320,7 +320,8 @@ Records structural models that could not be processed successfully during MSMS a
 ├── step4_depth_msms_mp.py
 ├── compute_q9nq29_depth_patch.py
 ├── verify_counts.py
-└── failed_ids.txt
+├── failed_ids.txt
+└── test.xyzr
 ```
 
 ### Main workflow scripts
@@ -337,7 +338,7 @@ Provides an optional SG solvent-accessibility filter.
 
 Calculates cysteine residue depth and motif-center depth using MSMS-generated solvent-excluded surfaces.
 
-### Utility scripts
+### Utility and supporting files
 
 `compute_q9nq29_depth_patch.py`
 
@@ -346,6 +347,14 @@ A project-specific repair utility used to recompute depth information for an ind
 `verify_counts.py`
 
 A dataset-accounting utility used to inspect retained pairs, unique proteins, and output structure. The input path in this script should be updated to match the final Step 4 table being evaluated.
+
+`failed_ids.txt`
+
+Records identifiers for structural models that could not be processed successfully during parts of the workflow.
+
+`test.xyzr`
+
+A small XYZR-format test file that can be used to inspect or test MSMS-compatible molecular-surface input.
 
 ## Important notes
 
